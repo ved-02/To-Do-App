@@ -5,10 +5,12 @@ const mongoose = require("mongoose");
 require("dotenv").config();
 const rootRoute = require("./routes/rootRoute");
 const accountRoute = require("./routes/accountRoute");
+const cors = require('cors')
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+app.use(cors())
 app.set("view engine", "ejs");
 app.use(express.static(__dirname+"/public"));
 app.use(express.json());
